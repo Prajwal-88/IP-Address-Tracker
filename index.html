@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./output.css">
+  <script src="./script.js" defer></script>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="font-rub min-h-screen">
+  <div class="w-full">
+    <div class="tracker text-center absolute z-10 w-full px-4 md:translate-y-7 ">
+      <h1 class="text-2xl text-white mb-6 mt-5">IP Address Tracker</h1>
+      <form action="/" method="get"  class="mb-6 md:mb-8 " >
+        <fieldset class="flex max-w-[500px] mx-auto">
+          <input type="text" name="ip" id="ip_holder" class="bg-white py-3  w-full rounded-tl-lg rounded-bl-lg outline-none px-6 ">
+         <button id="submit" class="bg-black px-5 rounded-tr-lg rounded-br-lg active:scale-50 transition-all duration-150 ease-linear"><img src="./images/icon-arrow.svg" alt="" class="static"></button>
+        </fieldset>
+      </form>
+  
+      <div class="tracker-info bg-white rounded-xl py-5 md:flex md:text-left md:gap-8 max-w-[1030px] mx-auto md:py-6">
+        <article class="mb-3 md:border-r-2 px-8">
+          <h1 class="text-[10px] font-bold text-Dark_Gray tracking-[.1em] uppercase md:text-[12px]">IP Address</h1>
+          <p class="font-medium text-[1.2rem] md:text-[1.4rem]" id="ip_adres">192.221.333.444</p>
+        </article>
+  
+        <article class="mb-3 md:border-r-2 md:pe-16">
+          <h1 class="text-[10px] font-bold text-Dark_Gray tracking-[.1em] uppercase md:text-[12px]">Location</h1>
+          <p class="font-medium text-[1.2rem] md:text-[1.4rem]" id="location">brokley, ny 01001</p>
+        </article>
+  
+        <article class="mb-3 md:border-r-2 md:pe-24">
+          <h1 class="text-[10px] font-bold text-Dark_Gray tracking-[.1em] uppercase md:text-[12px]">Timezone</h1>
+          <p class="font-medium text-[1.2rem] md:text-[1.4rem]">UTC<span id="timezone">-05:00</span></p>
+        </article>
+  
+        <article class="md:pe-16">
+          <h1 class="text-[10px] font-bold text-Dark_Gray tracking-[.1em] uppercase md:text-[12px]">ISP</h1>
+          <p class="font-medium text-[1.2rem] md:text-[1.4rem]" id="isp">spacex starclink</p>
+        </article>     
+      </div>
+    </div>
+  </div>
+    
+    <img src="./images/pattern-bg-mobile.png" alt="pattern-bg-mobile" class="relative md:hidden">
+    <img src="./images/pattern-bg-desktop.png" alt="" class="relative hidden md:block">
+    <div id="map" class=" min-h-screen w-screen relative -z-0"></div> 
+</body>
+</html>
